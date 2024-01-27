@@ -1,0 +1,173 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import { Icon } from 'astro-icon/components';
+
+const socialLinks = [
+  { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
+  { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+  { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
+  { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+];
+
+const metadata = {
+  title: 'Personal Homepage Demo',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <!-- image={{
+      src: 'https://images.unsplash.com/photo-1619983081563-430f63602796?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Art and Music Poster Image',
+    }} -->
+  <Hero id="hero" actions={[{ variant: 'primary', target: '_blank', text: "Let's Work Together!", href: '/' }]}>
+    <Fragment slot="title">
+      <span class="ms-4">Afif Jamhari,</span>
+      <br />
+      Full Stack Developer
+    </Fragment>
+    <Fragment slot="subtitle">
+      <!-- I strive to craft intuitive solutions. Proficient in full-stack development using modern techniques. -->
+      <div class="flex mx-auto text-muted w-fit">
+        <Icon name="tabler:point-filled" class="w-7 h-7 rtl:mr-0 rtl:ml-2 text-primary" />
+        <span class="my-auto"> Currently Available</span>
+      </div>
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+  <Content
+    id="porfolio"
+    title=""
+    subtitle=""
+    items={[]}
+    image={{
+      src: 'https://img.freepik.com/free-psd/laptop-screen-mockup_171918-185.jpg?w=1800&t=st=1706336897~exp=1706337497~hmac=c6e49b49ce2f94c3de0e30137aafa4f4afe3236dc4a430d9e490cab66cd54f46',
+      alt: 'Tech Design Image',
+    }}
+  >
+    <Fragment slot="content">
+      <a href="" class="hover:underline underline-offset-4">
+        <h3 class="text-2xl font-bold dark:text-white sm:text-3xl mb-2">
+          Simplifying and redesigning a learner experience platform
+        </h3>
+      </a>
+      <p class="text-muted">Simplifying and redesigning a learner experience platform.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent={true}
+    items={[]}
+    image={{
+      src: 'https://img.freepik.com/free-vector/landing-page-with-laptop_52683-28586.jpg?t=st=1706336871~exp=1706337471~hmac=0b4b049f8d8566774c478ffff70c2c00db1ee1e98cf7c42a84a1a11a015c1555',
+      alt: 'Art and Music Poster Image',
+    }}
+  >
+    <Fragment slot="content">
+      <a href="" class="hover:underline underline-offset-4">
+        <h3 class="text-2xl font-bold dark:text-white sm:text-3xl mb-2">Event poster for art & music festival</h3>
+      </a>
+      <p class="text-muted">Event poster for art & music festival.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent={true}
+    items={[]}
+    image={{
+      src: 'https://img.freepik.com/free-vector/gradient-responsive-website-design_23-2149496034.jpg?w=1800&t=st=1706336968~exp=1706337568~hmac=11aeda972ef2d7d82eb0cb7d67b01cc4d20fdb62406f87edbd1501b94b2714b8',
+      alt: 'Fashion e-commerce Image',
+    }}
+  >
+    <Fragment slot="content">
+      <a href="" class="hover:underline underline-offset-4">
+        <h3 class="text-2xl font-bold dark:text-white sm:text-3xl mb-2">
+          E-commerce website redesign for fashion brand
+        </h3>
+      </a>
+      <p class="text-muted">E-commerce website redesign for fashion brand.</p>
+    </Fragment>
+
+    <!--  <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment> -->
+  </Content>
+
+  <!-- Testimonials Widget *********** -->
+
+  <!-- <Testimonials
+    title="Client testimonials"
+    subtitle="Discover what clients have to say about their experiences working with me."
+    testimonials={[
+      {
+        testimonial: `She took our vague concept and turned it into a visual masterpiece that perfectly aligned with our goals. Her attention to detail and ability to translate ideas into compelling visuals exceeded our expectations.`,
+        name: 'Mark Thompson',
+        job: 'Creative director',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Mark Thompson Image',
+        },
+      },
+      {
+        testimonial: `She transformed our brand identity with her creative finesse, capturing our essence in every element. Her dedication and talent truly shine through her work.`,
+        name: 'Emily Martinez',
+        job: 'CEO',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
+          alt: 'Emily Martinez Image',
+        },
+      },
+      {
+        testimonial: `She has an uncanny ability to communicate emotions and stories. She crafted a logo for our NGO that not only represents our cause but also evokes empathy. Her professionalism and commitment make her a designer of exceptional caliber.`,
+        name: 'Laura Simmons',
+        job: 'Founder of an NGO',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Laura Simmons Image',
+        },
+      },
+    ]}
+  /> -->
+
+  <!-- BlogLatestPost Widget **************** -->
+
+<!--   <BlogLatestPosts
+    id="blog"
+    title="Explore my insightful articles on my blog"
+  >
+  </BlogLatestPosts> -->
+  <!-- 
+  <CallToAction
+    title="Say Hi!"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get In Touch',
+        href: '/',
+      },
+    ]}
+  >
+    <Fragment slot="subtitle">
+      <p class="text-muted max-w-96 mx-auto">
+        I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate
+        details of typography, or the vibrant hues of nature during my outdoor escapades.
+      </p>
+    </Fragment>
+  </CallToAction> -->
+</Layout>
