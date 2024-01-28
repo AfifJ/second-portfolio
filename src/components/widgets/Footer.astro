@@ -40,19 +40,18 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
       />
     </div>
     <div class="space-y-2 md:basis-2/3 text-center md:text-start">
-      <h3 class="text-xl font-semibold">Afif Jamhari</h3>
+      <h3 class="text-xl font-semibold">afifjamhari99@gmail.com</h3>
       <div class="text-sm w-full md:mr-4 mr-auto ml-auto md:ml-0 dark:text-slate-400 max-w-[50%] text-muted">
         <p>
-          Simplicity is the key to great user experiences. Let me help your company design a simpler user experience to
-          achieve better outcomes.
+          Simplicity is the key to great user experiences. Let me help your company design a simpler
         </p>
-        <p>All rights reserved.</p>
+        <!-- <p>All rights reserved.</p> -->
         <!-- <Fragment set:html={footNote} /> -->
       </div>
     </div>
-    <div class="text-right space-y-5">
-      <Button class="" variant="primary" text="Let's Work Together" icon="tabler:click" />
-      <ul class="flex mb-4 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4 justify-center">
+    <div class="text-center space-y-5">
+      <Button variant="primary" text="Let's Work Together" icon="tabler:click" />
+      <ul class="flex mb-4 mx-auto md:mb-0 justify-center">
         {
           socialLinks.map(({ ariaLabel, href, text, icon }) => (
             <li>

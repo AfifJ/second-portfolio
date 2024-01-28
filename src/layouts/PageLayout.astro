@@ -3,7 +3,7 @@ import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 
-import { headerData, footerData } from '~/navigation';
+import { ctaLink, headerData, footerData } from '~/navigation';
 
 import type { MetaData } from '~/types';
 
@@ -15,34 +15,19 @@ const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
-  <slot name="announcement">
-    <!-- <div class="text-muted text-sm bg-[#dbeafe] dark:bg-transparent dark:border-b dark:border-slate-800 dark:text-slate-400 hidden md:block overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap">
-      <div class=" mx-auto max-w-7xl">
-        <span class="dark:bg-slate-700 bg-white/40 dark:text-slate-300 font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 inline-block">HEY</span>
-        
-        <a href="" class="text-muted hover:underline dark:text-slate-400 font-medium">I'm currently available for work! »</a>
-      </div>
-    </div> -->
-  </slot>
-  <!-- <slot name="header"> -->
   <Header
     id="header"
-    links={[
-      { text: 'Home', href: '/' },
-      { text: 'Resume', href: '/resume' },
-      { text: 'Projects', href: '/projects' },
-      // { text: 'Github', href: '#' },
-    ]}
+    links={headerData.links}
     actions={[
       {
-        text: 'Get In Touch!',
-        href: '#',
+        variant: 'primary',
+        icon: 'tabler:click',
+        text: 'Let\'s Work Together',
+        href: ctaLink.href
       },
     ]}
     showToggleTheme
   />
-  <!-- <Header {...headerData} isSticky showRssFeed showToggleTheme /> -->
-  <!-- </slot> -->
   <main>
     <slot />
   </main>

@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 import Image from '~/components/common/Image.astro';
 import Button from '~/components/ui/Button.astro';
 import type { CallToAction } from '~/types';
+import { footerData } from '~/navigation.js';
 
 export interface Props {
   id?: string;
@@ -14,12 +15,7 @@ export interface Props {
   image?: string | any; // TODO: find HTMLElementProps
 }
 
-const socialLinks = [
-  { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-  { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-  { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-  { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
-];
+const socialLinks = footerData.socialLinks;
 
 const {
   id,
@@ -36,7 +32,7 @@ const {
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
     <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
-    <div class="md:py-0 2xl:py-16">
+    <div class="py-20 2xl:py-24">
       <div class="text-center max-w-5xl mx-auto">
         {
           title && (
@@ -47,7 +43,6 @@ const {
           )
         }
 
-        
         <div class="max-w-3xl mx-auto">
           {subtitle && <p class="text-lg text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
           {
@@ -63,6 +58,7 @@ const {
                     <a
                       class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none rounded-lg text-sm p-2.5 inline-flex items-center"
                       aria-label={ariaLabel}
+                      target="_blank"
                       href={href}
                     >
                       {icon && <Icon name={icon} class="w-5 h-5" />}
@@ -74,7 +70,7 @@ const {
               ''
             )
           }
-         
+
           {
             actions && (
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">

@@ -17,6 +17,7 @@ import BasicScripts from '~/components/common/BasicScripts.astro';
 
 import type { MetaData as MetaDataType } from '~/types';
 import { ViewTransitions } from 'astro:transitions';
+import TwSizeIndicator from '~/components/widgets/TwSizeIndicator.astro';
 
 export interface Props {
   metadata?: MetaDataType;
@@ -27,9 +28,6 @@ const { language, textDirection } = I18N;
 ---
 
 <!doctype html>
-<script is:inline>
-  document.documentElement.style.visibility = 'hidden';
-</script>
 <html lang={language} dir={textDirection} class="2xl:text-[18px]">
   <head>
     <CommonMeta />
@@ -42,12 +40,10 @@ const { language, textDirection } = I18N;
 
     <!-- Uncomment line below to activate View Transitions -->
     <ViewTransitions fallback="swap" />
-    <script defer is:inline>
-      document.documentElement.style.visibility = '';
-    </script>
   </head>
 
   <body class="antialiased text-default bg-page">
+    <TwSizeIndicator />
     <slot />
 
     <style is:global>
